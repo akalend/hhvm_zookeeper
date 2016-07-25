@@ -56,7 +56,7 @@ void ZookeeperExtension::moduleInit() {
 	
 	//HHVM_FE(msgpack_reset_options);
 
-	Native::registerConstant<KindOfInt64>(s_msgpack_ret_toarray.get(), 	MSGPACK_RET_TOARRAY);
+	// Native::registerConstant<KindOfInt64>(s_msgpack_ret_toarray.get(), 	MSGPACK_RET_TOARRAY);
 
 	loadSystemlib();
 
