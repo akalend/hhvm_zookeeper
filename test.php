@@ -5,4 +5,3 @@
  $zoo = new Zookeeper();
  $zoo->test();
 
-echo '***';

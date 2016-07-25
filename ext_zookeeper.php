@@ -22,4 +22,14 @@ class Zookeeper {
       echo "**** test\n";
    }   
 
+
+   public function set(mixed: $data) : void;
+
+   public function get(string: $path) : mixed;
+
+   //public function path( ) : void;
+
+   public function list(string: $path ) : void;
+
+
 }
