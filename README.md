@@ -1,2 +1,2 @@
-# hhvm_zookeper
-the zookeeper client for hhvm
+# hhvm_zookeeper 
+the zookeeper client for hhvm **experimental**
