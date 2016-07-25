@@ -36,3 +36,6 @@ Makefile
 #hphpize
 run-test
 
+#hhvm typechecker
+.hhconfig
+
