@@ -23,13 +23,14 @@ class Zookeeper {
    }   
 
 
-   public function set(mixed: $data) : void;
+   <<__Native>>
+   public function set(string $data) : void;
 
-   public function get(string: $path) : mixed;
+   <<__Native>>
+   public function get(string $path) : string;
 
-   //public function path( ) : void;
-
-   public function list(string: $path ) : void;
+   <<__Native>>
+   public function list(string $path) : void;
 
 
 }

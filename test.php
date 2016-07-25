@@ -3,5 +3,5 @@
 //print_r(get_loaded_extensions());
 
  $zoo = new Zookeeper();
- $zoo->test();
+ echo $zoo->get(''), PHP_EOL;
 

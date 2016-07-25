@@ -6,23 +6,35 @@
 
 namespace HPHP {
 
-// static Array HHVM_FUNCTION(msgpack_unpack, const String& data);
+	String HHVM_METHOD(Zookeeper, get, const String& path);
+	void HHVM_METHOD(Zookeeper, list, const String& path);
+	void HHVM_METHOD(Zookeeper, set, const String& data);
 
 
 
-class ZookeeperExtension : public Extension {
-	public:
-	
-	static int BufferSize;
-	
-	ZookeeperExtension(): Extension("zookeeper", "0.0.1") {
+
+
+	class Zookeeper {
+		public:
+			Zookeeper();
+
+			~Zookeeper();
+
+			CLASSNAME_IS("Zookeeper")
+
+	};
+
+	class ZookeeperExtension : public Extension {
+		public:
 		
-	}
+			static int BufferSize;
+		
+			ZookeeperExtension(): Extension("zookeeper", "0.0.1") {}
 
-	void moduleInit() override;
-	void moduleShutdown() override;
+			void moduleInit() override;
+			void moduleShutdown() override;
 
-} ;
+	} ;
 
 
 

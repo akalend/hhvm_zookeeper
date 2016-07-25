@@ -54,11 +54,15 @@ const StaticString
 
 void ZookeeperExtension::moduleInit() {
 	
-	//HHVM_FE(msgpack_reset_options);
+	  HHVM_ME(Zookeeper, get);
+    HHVM_ME(Zookeeper, set);
+    HHVM_ME(Zookeeper, list);
+	
 
-	// Native::registerConstant<KindOfInt64>(s_msgpack_ret_toarray.get(), 	MSGPACK_RET_TOARRAY);
 
-	loadSystemlib();
+  // Native::registerConstant<KindOfInt64>(s_msgpack_ret_toarray.get(), 	MSGPACK_RET_TOARRAY);
+
+	   loadSystemlib();
 
 }
 
@@ -73,6 +77,40 @@ static ZookeeperExtension s_Zookeeper_extension;
 
 
 //////////////////    HHVM_FUNCTION     //////////////////
+
+// ------------------------------  Zookeeper ------------------------------------------
+
+
+
+  Zookeeper::Zookeeper() {
+    // create
+  }
+
+  Zookeeper::~Zookeeper() {
+    // close
+  }
+
+
+  String HHVM_METHOD(Zookeeper, get, const String& path) 
+  {
+
+    return String("***");
+  }
+
+
+
+  void HHVM_METHOD(Zookeeper, list, const String& path) 
+  {
+
+    
+  }
+
+
+  void HHVM_METHOD(Zookeeper, set, const String& data) 
+  {
+
+    
+  }
 
 
 
