@@ -1,2 +1,2 @@
-HHVM_EXTENSION(zookeper zookeper.cpp)
-HHVM_SYSTEMLIB(zookeper ext_zookeper.php)
+HHVM_EXTENSION(zookeeper zookeeper.cpp)
+HHVM_SYSTEMLIB(zookeeper ext_zookeeper.php)

@@ -36,11 +36,7 @@
 #include "hphp/runtime/base/variable-unserializer.h"
 
 
-#define MP_SOURCE 1
-#include "msgpuck.h"
-#include "msgpack.h"
-
-#define EXT_TYPE_OBJ 5
+#include "zookeeper.h"
 
 
 namespace HPHP {
@@ -50,13 +46,13 @@ namespace HPHP {
 * static constant definition
 */
 const StaticString
-	s_zookeper_test("test");
+	s_zookepeer_test("test");
 
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-void ZookeperExtension::moduleInit() {
+void ZookeeperExtension::moduleInit() {
 	
 	//HHVM_FE(msgpack_reset_options);
 
@@ -66,14 +62,14 @@ void ZookeperExtension::moduleInit() {
 
 }
 
-void ZookeperExtension::moduleShutdown() {
+void ZookeeperExtension::moduleShutdown() {
 
 }
 
 
 //////////////////    static    /////////////////////////
 
-static ZookeperExtension s_zookeper_extension;
+static ZookeeperExtension s_Zookeeper_extension;
 
 
 //////////////////    HHVM_FUNCTION     //////////////////
@@ -81,6 +77,6 @@ static ZookeperExtension s_zookeper_extension;
 
 
 
-HHVM_GET_MODULE(zookeper);
+HHVM_GET_MODULE(Zookeeper);
 
 } // namespace HPHP

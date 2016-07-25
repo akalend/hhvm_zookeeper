@@ -15,7 +15,7 @@
    +----------------------------------------------------------------------+
 */
 
-class Zookeper() {
+class Zookeeper() {
 
    public function test() {
       echo "test\n";

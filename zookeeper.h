@@ -10,12 +10,12 @@ namespace HPHP {
 
 
 
-class ZookeperExtension : public Extension {
+class ZookeeperExtension : public Extension {
 	public:
 	
 	static int BufferSize;
 	
-	ZookeperExtension(): Extension("zookeper", "0.0.1") {}
+	ZookeeperExtension(): Extension("Zookeeper", "0.0.1") {}
 
 	void moduleInit() override;
 	void moduleShutdown() override;
