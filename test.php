@@ -1,4 +1,8 @@
-<?hh
+<?hh // decl
 
-$zoo = new Zookeeper();
-$zoo->test();
+//print_r(get_loaded_extensions());
+
+ $zoo = new Zookeeper();
+ $zoo->test();
+
+echo '***';

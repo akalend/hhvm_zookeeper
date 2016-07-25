@@ -3,7 +3,7 @@
    +----------------------------------------------------------------------+
    | HipHop for PHP                                                       |
    +----------------------------------------------------------------------+
-   | Copyright (c) 2015 Alexandre Kalendarev                              |
+   | Copyright (c) 2016 Alexandre Kalendarev                              |
    +----------------------------------------------------------------------+
    | This source file is subject to version 3.01 of the PHP license,      |
    | that is bundled with this package in the file LICENSE, and is        |
@@ -15,10 +15,11 @@
    +----------------------------------------------------------------------+
 */
 
-class Zookeeper() {
+class Zookeeper {
 
-   public function test() {
-      echo "test\n";
+   public function test() 
+   {
+      echo "**** test\n";
    }   
-}
 
+}

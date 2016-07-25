@@ -15,7 +15,9 @@ class ZookeeperExtension : public Extension {
 	
 	static int BufferSize;
 	
-	ZookeeperExtension(): Extension("Zookeeper", "0.0.1") {}
+	ZookeeperExtension(): Extension("zookeeper", "0.0.1") {
+		
+	}
 
 	void moduleInit() override;
 	void moduleShutdown() override;
@@ -23,7 +25,5 @@ class ZookeeperExtension : public Extension {
 } ;
 
 
-
-// HHVM_GET_MODULE(msgpack);
 
 } // namespace HPHP

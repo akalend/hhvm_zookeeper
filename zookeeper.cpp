@@ -46,7 +46,7 @@ namespace HPHP {
 * static constant definition
 */
 const StaticString
-	s_zookepeer_test("test");
+	s_zookeeper_test("test");
 
 
 
