@@ -36,7 +36,8 @@
 #include "hphp/runtime/base/variable-unserializer.h"
 
 
-#include "zookeeper.h"
+#include "hhvm_zookeeper.h"
+
 
 
 namespace HPHP {
