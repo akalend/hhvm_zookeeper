@@ -6,5 +6,5 @@
 
 var_dump($zoo);
 
- echo $zoo->get(''), PHP_EOL;
+ $zoo->connect();
 

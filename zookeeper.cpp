@@ -88,6 +88,8 @@ static ZookeeperExtension s_Zookeeper_extension;
   void HHVM_METHOD(Zookeeper, connect) 
   {
 
+      // auto zoo = dyn_cast_or_null<ZooResource>("127.0.0.1:2081", null, 2000 ); 
+//      Resource = new ZooResource();
 
   }
 

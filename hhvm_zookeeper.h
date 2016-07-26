@@ -16,12 +16,12 @@ namespace HPHP {
 
 
 
-	class Zookeeper : public ResourceData {
+	class ZooResource : public ResourceData {
 		public:
  
- 			DECLARE_RESOURCE_ALLOCATION_NO_SWEEP(Zookeeper)
+ 			DECLARE_RESOURCE_ALLOCATION_NO_SWEEP(ZooResource)
 
-			 Zookeeper(const char* host_port, watcher_fn my_watcher_func, int timeout ) {
+			 ZooResource(const char* host_port, watcher_fn my_watcher_func, int timeout ) {
     		// create
   
 		    // static zhandle_t *zh;
@@ -36,7 +36,7 @@ namespace HPHP {
 		  }
 
 
-			~Zookeeper() {
+			~ZooResource() {
 				close();
 			};
 
