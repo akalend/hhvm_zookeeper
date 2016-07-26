@@ -67,11 +67,21 @@ class Zookeeper {
    const NOTHING         = -117;
    const SESSIONMOVED    = -118;
 
+
+   private $zooRes = null;
+
    public function  __construct(private string ?$host = '127.0.0.1:2181', private string ?$watcher_cb = null, private int ?$recv_timeout = 10000)
    {
-        if ($recv_timeout < 0)
+        if ($recv_timeout < 0) {
             throw new ArgumentException("recv_timeout parameter has to be greater than 0");
+         }
+
+         $this->zooRes = init();
    }
+
+
+   <<__Native>>
+   private function init() : void;
 
 
    <<__Native>>

@@ -32,8 +32,12 @@
 #include "hphp/runtime/base/execution-context.h"  // g_context
 #include "hphp/runtime/base/type-object.h"  	  // Object
 #include "hphp/runtime/base/builtin-functions.h"
-#include "hphp/runtime/base/variable-serializer.h"
-#include "hphp/runtime/base/variable-unserializer.h"
+#include "hphp/runtime/base/req-ptr.h"
+#include "hphp/util/string-vsnprintf.h"
+
+
+// #include "hphp/runtime/base/variable-serializer.h"
+// #include "hphp/runtime/base/variable-unserializer.h"
 
 #include "zookeeper.h"
 
@@ -60,6 +64,8 @@ void ZookeeperExtension::moduleInit() {
     HHVM_ME(Zookeeper, set);
     HHVM_ME(Zookeeper, list);
     HHVM_ME(Zookeeper, connect);
+
+    HHVM_ME(Zookeeper, init);
 	
 
 
@@ -84,11 +90,20 @@ static ZookeeperExtension s_Zookeeper_extension;
 // ------------------------------  Zookeeper ------------------------------------------
 
 
+  Resource HHVM_METHOD(Zookeeper, init) 
+  {
+
+    // "127.0.0.1:2081", NULL, 2000 
+      
+      return Resource(newres<ZooResource>());
+  }
+
+
 
   void HHVM_METHOD(Zookeeper, connect) 
   {
 
-      // auto zoo = dyn_cast_or_null<ZooResource>("127.0.0.1:2081", null, 2000 ); 
+  
 //      Resource = new ZooResource();
 
   }
