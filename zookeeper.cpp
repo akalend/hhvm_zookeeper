@@ -35,6 +35,7 @@
 #include "hphp/runtime/base/variable-serializer.h"
 #include "hphp/runtime/base/variable-unserializer.h"
 
+#include "zookeeper.h"
 
 #include "hhvm_zookeeper.h"
 
@@ -82,15 +83,6 @@ static ZookeeperExtension s_Zookeeper_extension;
 
 // ------------------------------  Zookeeper ------------------------------------------
 
-
-
-  Zookeeper::Zookeeper() {
-    // create
-  }
-
-  Zookeeper::~Zookeeper() {
-    // close
-  }
 
 
   void HHVM_METHOD(Zookeeper, connect) 

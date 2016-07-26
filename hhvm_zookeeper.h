@@ -1,6 +1,8 @@
 #include "hphp/runtime/ext/extension.h"
 #include "hphp/runtime/base/execution-context.h"  // g_context
 
+#include "zookeeper.h"
+
 
 #define BUFFSIZE 4096
 
@@ -14,15 +16,51 @@ namespace HPHP {
 
 
 
-
-
-	class Zookeeper {
+	class Zookeeper : public ResourceData {
 		public:
-			Zookeeper();
+ 
+ 			DECLARE_RESOURCE_ALLOCATION_NO_SWEEP(Zookeeper)
 
-			~Zookeeper();
+			 Zookeeper(const char* host_port, watcher_fn my_watcher_func, int timeout ) {
+    		// create
+  
+		    // static zhandle_t *zh;
+		    m_zk = (void *) zookeeper_init(host_port, my_watcher_func, timeout, 0, NULL, 0);
+
+		    if (!m_zk) {
+		      throw Object(SystemLib::AllocExceptionObject(
+		        "Unable create Zookeeper context"
+		      ));
+		    }
+
+		  }
+
+
+			~Zookeeper() {
+				close();
+			};
 
 			CLASSNAME_IS("Zookeeper")
+
+			  // overriding ResourceData
+  		    const String& o_getClassNameHook() const { return classnameof(); }
+
+			void close() {
+			    if (!isValid())
+			        return;
+			    
+			    
+	 			zookeeper_close((zhandle_t *) m_zk);
+	 		    m_zk = nullptr;
+			  }
+
+			  bool isValid() { return m_zk != nullptr; }
+			  
+			  void *get() { return m_zk; }
+
+		private:
+			void *m_zk;
+
 
 	};
 
