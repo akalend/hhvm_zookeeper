@@ -2,6 +2,9 @@
 
 //print_r(get_loaded_extensions());
 
- $zoo = new Zookeeper();
+ $zoo = new Zookeeper('','',1000);
+
+var_dump($zoo);
+
  echo $zoo->get(''), PHP_EOL;
 

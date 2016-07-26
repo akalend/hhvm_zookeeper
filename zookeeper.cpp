@@ -58,6 +58,7 @@ void ZookeeperExtension::moduleInit() {
 	  HHVM_ME(Zookeeper, get);
     HHVM_ME(Zookeeper, set);
     HHVM_ME(Zookeeper, list);
+    HHVM_ME(Zookeeper, connect);
 	
 
 
@@ -89,6 +90,13 @@ static ZookeeperExtension s_Zookeeper_extension;
 
   Zookeeper::~Zookeeper() {
     // close
+  }
+
+
+  void HHVM_METHOD(Zookeeper, connect) 
+  {
+
+
   }
 
 

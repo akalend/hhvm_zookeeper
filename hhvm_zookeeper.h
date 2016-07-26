@@ -6,9 +6,11 @@
 
 namespace HPHP {
 
+	void HHVM_METHOD(Zookeeper, connect); 
 	String HHVM_METHOD(Zookeeper, get, const String& path);
 	void HHVM_METHOD(Zookeeper, list, const String& path);
 	void HHVM_METHOD(Zookeeper, set, const String& data);
+
 
 
 
