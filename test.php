@@ -1,3 +1,4 @@
+#!/usr/bin/hhvm
 <?hh // decl
 
 //print_r(get_loaded_extensions());
@@ -6,5 +7,5 @@
 
 var_dump($zoo);
 
- $zoo->connect();
+ // $zoo->connect();
 

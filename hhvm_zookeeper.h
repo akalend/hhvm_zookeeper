@@ -13,7 +13,7 @@ namespace HPHP {
 	void HHVM_METHOD(Zookeeper, list, const String& path);
 	void HHVM_METHOD(Zookeeper, set, const String& data);
 
-	Resource HHVM_METHOD(Zookeeper, init); 
+	void HHVM_METHOD(Zookeeper, init); 
 
 
 
@@ -27,13 +27,8 @@ namespace HPHP {
 
  			DECLARE_RESOURCE_ALLOCATION_NO_SWEEP(ZooResource)
 
-			 ZooResource() {
-    		// create
-  
-		    // static zhandle_t *zh;
-		  }
-
-
+			 ZooResource() {}		    // static zhandle_t *zh;
+		  
 			~ZooResource() {
 				close();
 			};
@@ -45,6 +40,11 @@ namespace HPHP {
 
 
   		    void connect() {
+
+  		    	if (m_res != nullptr) {
+  		    		zookeeper_close((zhandle_t *) m_res);	
+  		    	}
+
 			    m_res = (void *) zookeeper_init(host_port, my_watcher_func, timeout, 0, NULL, 0);
 
 			    if (!m_res) {

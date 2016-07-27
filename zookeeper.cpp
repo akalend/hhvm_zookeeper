@@ -52,7 +52,8 @@ namespace HPHP {
 * static constant definition
 */
 const StaticString
-	s_zookeeper_test("test");
+  s_zookeeper("Zookeeper"),
+	s_zookeeper_res("zooRes");
 
 
 
@@ -90,12 +91,16 @@ static ZookeeperExtension s_Zookeeper_extension;
 // ------------------------------  Zookeeper ------------------------------------------
 
 
-  Resource HHVM_METHOD(Zookeeper, init) 
+  void HHVM_METHOD(Zookeeper, init) 
   {
-
     // "127.0.0.1:2081", NULL, 2000 
-      
-      return Resource(newres<ZooResource>());
+      req::ptr<ZooResource>  ptr = req::make<ZooResource>(); 
+      Variant res = Variant(ptr);
+
+      Object ob{Unit::loadClass(s_zookeeper.get())};
+
+      ob.o_set( s_zookeeper_res, Variant( ptr ), s_zookeeper);
+
   }
 
 
