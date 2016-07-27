@@ -5,7 +5,9 @@
 
  $zoo = new Zookeeper('','',1000);
 
-var_dump($zoo);
+
 
  // $zoo->connect();
 
+
+var_dump($zoo);

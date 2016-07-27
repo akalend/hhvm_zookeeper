@@ -99,7 +99,11 @@ static ZookeeperExtension s_Zookeeper_extension;
 
       Object ob{Unit::loadClass(s_zookeeper.get())};
 
-      ob.o_set( s_zookeeper_res, Variant( ptr ), s_zookeeper);
+
+      printf("start init()\n");
+
+    ob.o_set( s_zookeeper_res, Variant( 123 ), s_zookeeper);
+      //ob.o_set( s_zookeeper_res, Variant( ptr ), s_zookeeper);
 
   }
 

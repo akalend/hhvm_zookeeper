@@ -68,7 +68,7 @@ namespace HPHP {
 			  void *get() { return m_res; }
 
 		private:
-			void *m_res;
+			void *m_res = nullptr;
 
 
 	};
