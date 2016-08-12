@@ -1,3 +1,8 @@
+/**
+* gcc  -o test.o  -c  -I/usr/include/zookeeper test.c
+* gcc  -lzookeeper_st   test.o
+*/
+
 #include <string.h>
 #include <errno.h>
 #include <stdio.h>
